@@ -3,8 +3,6 @@
 
 It is a set of middleware and view helper functions for the Node.js express framework.
 
-## [Github](https://github.com/lawrenz1337/cachify-minify) ##
-
 ## Credits ##
 Hey, there! This module is made from combining [connect-cachify](https://www.npmjs.com/package/connect-cachify) and [node-minify](https://www.npmjs.com/package/node-minify)
 Its purpose is to create a minified package from input files and rebuild package everytime one of included files changes without app restart. I hope you'll like it :)
