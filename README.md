@@ -5,7 +5,7 @@ It is a set of middleware and view helper functions for the Node.js express fram
 
 ## Credits ##
 Hey, there! This module is made from combining [connect-cachify](https://www.npmjs.com/package/connect-cachify) and [node-minify](https://www.npmjs.com/package/node-minify)
-Its purpose is to create a minified package from input files and rebuild package everytime one of included files changes without app restart. I hope you'll like it :)
+Its purpose is to create a minified package from input files and rebuild package everytime one of included files changes without app restart. It no longer supports caching of css files because ``node-minify`` minifies only JS files. I hope you'll like it :)
 
 ## Installation ##
 
@@ -23,15 +23,6 @@ Its purpose is to create a minified package from input files and rebuild package
           '/js/lib/jquery.js',
           '/js/magick.js',
           '/js/laughter.js'
-        ],
-        "/css/home.min.css": [
-          '/css/reset.css',
-          '/css/home.css'
-        ],
-        "/css/dashboard.min.css": [
-          '/css/reset.css',
-          '/css/common.css'
-          '/css/dashboard.css'
         ]
     };
 
@@ -56,7 +47,6 @@ middleware which works with these same requests.
     ...
     <head>
       <title>Dashboard: Hamsters of North America</title>
-      <%- cachify_css('/css/dashboard.min.css') %>
     </head>
     <body>
     ...
@@ -69,7 +59,6 @@ middleware which works with these same requests.
     ...
     title= Dashboard: Hamsters of North America
     meta(charset='utf-8')
-    | !{cachify_css('/css/dashboard.min.css')}
     ...
     body
     ...
@@ -99,7 +88,7 @@ to the ``static`` middleware.
   Useful to specify paths to files that are not in the ``root`` directory.
 
 * production - Boolean indicating if your in development or production mode.
-    Effects how links for js and css files are generated.
+    Effects how links for js files are generated.
 
 * debug - Boolean indicating we should always re-write urls with a hash.
 
@@ -109,11 +98,11 @@ So how does cachify work?
 When you cachify a url, it adds an MD5 hash of the file's contents into the URL
 it generates:
 
-    http://example.com/cbcb1e865e61c08a68a4e0bfa293e806/stylo.css
+    http://example.com/cbcb1e865e61c08a68a4e0bfa293e806/main.js
 
 Incoming requests are checked for this MD5 hash. If present and if we' know
 about the resource (either via options or the file exists on disk), then the
-request path is rewritten back to ``/stylo.css``, so that another route can
+request path is rewritten back to ``/main.js``, so that another route can
 process the request.
 
 These requests are served up with expires headers that are very long lived, so a user's browser will only request them once.
