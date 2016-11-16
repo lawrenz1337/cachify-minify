@@ -1,6 +1,6 @@
 {
   "name": "cachify-minify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Module for minification and cachifying JS files on server side. It rebuilds pack file everytime one of included files changes, with no need of application restarting.",
   "main": "index.js",
   "scripts": {
@@ -8,9 +8,9 @@
   },
   "author": "lawreNz",
   "license": "ISC",
-  "repository" :  { 
-    "type" : "git", 
-    "url" : "https://github.com/lawrenz1337/cachify-minify.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lawrenz1337/cachify-minify.git"
   },
   "dependencies": {
     "node-minify": "^1.3.9",
