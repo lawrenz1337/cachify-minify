@@ -84,14 +84,6 @@ The following are optional config for ``cachify.setup``
 * root - Path where static assets are stored on disk. Same value as you'd pass
 to the ``static`` middleware.
 
-* url_to_paths - an associative array of URLs to absolute filename paths.
-  Useful to specify paths to files that are not in the ``root`` directory.
-
-* production - Boolean indicating if your in development or production mode.
-    Effects how links for js files are generated.
-
-* debug - Boolean indicating we should always re-write urls with a hash.
-
 ## Magick ##
 So how does cachify work?
 

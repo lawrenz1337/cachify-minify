@@ -1,6 +1,6 @@
 {
   "name": "cachify-minify",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Module for minification and cachifying JS files on server side. It rebuilds pack file everytime one of included files changes, with no need of application restarting.",
   "main": "index.js",
   "scripts": {
