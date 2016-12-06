@@ -101,9 +101,3 @@ These requests are served up with expires headers that are very long lived, so a
 
 Cachify **doesn't** attempt to **find an older version** of your resource,
 if the MD5 has was for an older file.
-
-## Debugging ##
-To debug cachify's hashed url behavior, pass in the following parameter in
-your options block:
-
-    setup({ debug: true, ...});
