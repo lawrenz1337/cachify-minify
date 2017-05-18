@@ -1,6 +1,6 @@
 {
   "name": "cachify-minify",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Module for minification and cachifying JS files on server side. It rebuilds pack file everytime one of included files changes, with no need of application restarting.",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,7 @@
     "url": "git+https://github.com/lawrenz1337/cachify-minify.git"
   },
   "dependencies": {
+    "node-minify-custom-fork": "^1.0.0",
     "underscore": "^1.8.3"
   },
   "bugs": {
